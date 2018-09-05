@@ -23,6 +23,6 @@ def check_lyc(x):
         print("No it is not an anti-Lychrel number, it did not reach a palindrome in 30 iterations")
 try:
     x=int(input())
+    check_lyc(x)
 except:
-    print("error, please input a number")
-check_lyc(x)
+    print("error, please enter a number")
