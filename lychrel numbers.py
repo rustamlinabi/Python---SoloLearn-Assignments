@@ -1,3 +1,4 @@
+#this code checks if the user input number is "anti-Lychrel" (non-Lychrel) or not and how many iterations it takes for it to reach a palindrome.
 def reverseof(x):
     d=list()
     for a in str(x):
@@ -20,5 +21,8 @@ def check_lyc(x):
             f=d
     if fol==3:
         print("No it is not an anti-Lychrel number, it did not reach a palindrome in 30 iterations")
-x=int(input())
+try:
+    x=int(input())
+except:
+    print("error, please input a number")
 check_lyc(x)
