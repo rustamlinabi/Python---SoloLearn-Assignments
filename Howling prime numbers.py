@@ -15,7 +15,7 @@ BONUS: Print all the howling prime numbers in a given range.
 """
 def isprime(num):
     r=True
-    for a in range(2,10):
+    for a in range(2,num):
         if num%a==0:
             r=False
     return r
