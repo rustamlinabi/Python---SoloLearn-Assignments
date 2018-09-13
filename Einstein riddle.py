@@ -61,17 +61,13 @@ analist=list()
 for a in cocolist:
     if a[0]=="Math":
         mathlist.append(a)
-for a in cocolist:
-    if a[0]=="Hacker":
+    elif a[0]=="Hacker":
         hackerlist.append(a)
-for a in cocolist:
-    if a[0]=="Developer":
+    elif a[0]=="Developer":
         devellist.append(a)
-for a in cocolist:
-    if a[0]=="Engineer":
+    elif a[0]=="Engineer":
         engineerlist.append(a)
-for a in cocolist:
-    if a[0]=="Analyst":
+    elif a[0]=="Analyst":
         analist.append(a)
 #This gives us combinations of all "neighborhoods"
 comblist=list()
@@ -98,9 +94,7 @@ for a in comblist:
         if a[b][4]=="hadoop":
             for c in range(0,5):
                 if a[c][1]=="javascript":
-                    if a[b][5]-a[c][5]==1:
-                        continue
-                    elif a[b][5]-a[c][5]==-1:
+                    if (a[b][5]-a[c][5])**2==1:
                         continue
                     else:
                         try:
@@ -110,9 +104,7 @@ for a in comblist:
         if a[b][4]=="cassandra":
             for c in range(0,5):
                 if a[c][1]=="c":
-                    if a[b][5]-a[c][5]==1:
-                        continue
-                    elif a[b][5]-a[c][5]==-1:
+                    if (a[b][5]-a[c][5])**2==1:
                         continue
                     else:
                         try:
