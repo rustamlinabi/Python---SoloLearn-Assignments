@@ -1,0 +1,40 @@
+"""
+A number is a lab number if square of one ALL of its prime divisors is also its divisor. This code checks if given number is a lab number or which numbers in given range are lab numbers
+"""
+n=list(input().replace(",","-").replace(" ","-").split("-"))
+def isprime(n):
+    l=True
+    for a in range(2,n):
+        if n%a==0:
+            l=False
+    return l
+def islab(n):
+    r=True
+    divlist=list()
+    for a in range(2,int(n)):
+        if isprime(a) and int(n)%a==0 and int(n)!=(a**2):
+            divlist.append(a)
+    if len(divlist)==0:
+        r=False
+    for b in divlist:
+        if int(n)%(b**2)!=0:
+            r=False
+    return r
+def lablist(n):
+    try:
+        if len(n)==1:
+            if islab(n[0]):
+                print(n[0],"is a lab number, since square of all of its prime divisors is also one of its divisors")
+            else:
+                print(n[0],"is not a lab number")
+        else:
+            labs=list()
+            for number in range(int(n[0]),int(n[1])):
+                if islab(number)==True:
+                    labs.append(number)
+                else:
+                    continue
+            print("Lab numbers in given range are:",labs)
+    except:
+        print("Please input a number or a range")
+lablist(n)
