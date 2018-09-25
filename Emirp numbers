@@ -1,0 +1,26 @@
+"""
+Emirp number is a prime number reverse of which is also a prime
+"""
+
+a=input().replace(" ","-").replace(",","-").split("-")
+def isprime(a):
+    l=True
+    for b in range(2,a):
+        if a%b==0:
+            l=False
+            break
+    return l
+if len(a)==1:
+    if isprime(int(a[0])) :
+        if isprime(int("".join(str(a[0])[::-1]))):
+            print(a[0],"is an emirp")
+        else:
+            print(a[0],"is a prime, but its reverse is not a prime")
+    else:
+        print(a[0],"is not a prime number in the first place, ya doofus")
+else:
+    emirplist=list()
+    for l in range(int(a[0]),int(a[1])):
+        if isprime(l) and isprime(int("".join(str(a[0])[::-1]))):
+            emirplist.append(l)
+    print("These are emirp numbers in given range:",emirplist)
