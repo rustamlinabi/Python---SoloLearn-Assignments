@@ -1,0 +1,19 @@
+"""
+Please enter a number or a range of numbers to check whether they are trimorphic
+"""
+
+def trim (num):
+    ans=True if (num**3)%(10**len(list(str(num))))==num else False
+    return ans
+num=list(input().replace(",","-").replace(" ","-").split("-"))
+if len(num)==1:
+    if trim(int(num[0]))==True:
+        print(num, "is a trimorphic number") 
+    else:
+        print(num,"is not a trimorphic number")
+else:
+    trimlist=list()
+    for a in range(int(num[0]),int(num[1])+1):
+        if trim(int(a))==True:
+            trimlist.append(a) 
+    print("This is the list of trimorphic numbers in the given range:",trimlist)
